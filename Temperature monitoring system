@@ -1,0 +1,12 @@
+def temperature_monitoring(temperature):
+  lower_limit=int(input("Enter lower limit: "))
+  Upper_limit=int(input("Enter Upper limit: "))
+  print("Temperature is: ",temperature)
+  if temperature<lower_limit:
+    print("Temperature is below lower limit")
+  elif temperature>Upper_limit:
+    print("Temperature is above upper limit")
+  else:
+    print("Temperature is within safe range")
+temperature=int(input("Enter temperature: "))
+print(temperature_monitoring(temperature))
