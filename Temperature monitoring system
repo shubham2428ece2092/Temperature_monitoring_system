@@ -1,12 +1,34 @@
-def temperature_monitoring(temperature):
-  lower_limit=int(input("Enter lower limit: "))
-  Upper_limit=int(input("Enter Upper limit: "))
-  print("Temperature is: ",temperature)
-  if temperature<lower_limit:
-    print("Temperature is below lower limit")
-  elif temperature>Upper_limit:
-    print("Temperature is above upper limit")
-  else:
-    print("Temperature is within safe range")
-temperature=int(input("Enter temperature: "))
-print(temperature_monitoring(temperature))
+import random
+
+def monitor_temperature():
+    print("Temperature Monitoring System")
+    
+    # User defines the temperature range
+    lower_limit = float(input("Enter lower temperature limit: "))
+    upper_limit = float(input("Enter upper temperature limit: "))
+    
+    print("\nMonitoring temperature... Type 'exit' to stop.\n")
+    
+    while True:
+        # Simulate a random temperature
+        current_temp = random.uniform(-10, 50)  # Random temperature between -10°C and 50°C
+        
+        print(f"Current Temperature: {current_temp:.2f}°C")
+        
+        # Check if the temperature is out of range
+        if current_temp < lower_limit:
+            print("Alert: Temperature is below the lower limit!")
+        elif current_temp > upper_limit:
+            print("Alert: Temperature is above the upper limit!")
+        
+        # Exit condition
+        user_input = input("Press Enter to continue and Type 'exit' to quit: ")
+        if user_input.lower() == 'exit':
+            print("Exiting temperature monitoring system.")
+            break
+
+# Example usage
+monitor_temperature()
+
+
+
